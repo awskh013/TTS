@@ -20,10 +20,10 @@ def tts():
         return send_file(OUTPUT_FILE, mimetype="audio/mpeg", as_attachment=True)
 
     except Exception as e:
-        print("🔥 ERROR OCCURRED:", e)   # يطبع الخطأ مهما كان
+        print("🔥 ERROR OCCURRED:", e)
         import traceback
-        traceback.print_exc()           # يطبع Stacktrace كامل
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port=10000)
