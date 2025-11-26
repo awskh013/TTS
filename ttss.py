@@ -4,7 +4,7 @@ import edge_tts
 import os
 
 app = Flask(__name__)
-OUTPUT_FILE = "output.mp3"
+OUTPUT_FILE = os.path.join(os.getcwd(), "output.mp3")
 
 async def text_to_speech(text, voice="en-US-JennyNeural"):
     communicate = edge_tts.Communicate(text, voice)
@@ -27,3 +27,4 @@ def tts():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
