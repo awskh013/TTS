@@ -7,7 +7,7 @@ OUTPUT_FILE = os.path.join(os.getcwd(), "output.mp3")
 
 @app.route("/tts", methods=["GET"])
 def tts():
-    text = "Hi Haaamooodi"
+    text = "Hi ahmad"
     try:
         tts = gTTS(text=text, lang='en')
         tts.save(OUTPUT_FILE)
@@ -19,3 +19,4 @@ def tts():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
+
